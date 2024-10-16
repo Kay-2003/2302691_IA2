@@ -34,7 +34,8 @@
    </fieldset>
   </form>
   
-    <form id= "createacc" class="create-account">
+  <form onsubmit="loginForm(); return false;">
+    <fieldset>
       <center><legend>Sign Up</legend></center>
       <label for="name">Name</label>
     <br>
@@ -52,34 +53,35 @@
     <br><br>
     
     <input type="submit" value="Sign In">
+    </fieldset>
     </form>
   
     <script>
       const username= "kimonebarett@gmail.com";
       const SPassword="HOGWARTS123"; 
+      let attempts = 0;
 
       function signupForm(){
         const name= document.getElementById("Name").value;
         const email= document.getElementById("Email").value;
         const password= document.getElementById("pword").value;
-        localStorage.setItem("Name", name);
-        localStorage.setItem("email", email).value;
-        localStorage.setItem("password", password);
-      }
+        localStorage.setItem("signupName", name);
+        localStorage.setItem("signupEmail", email);
+        localStorage.setItem("signupPassword", password);
 
-      
-      let attempts=0;
+        alert("Account Created! Please log in.");
+      }
 
       function loginForm()
       {
         const email=document.getElementById("email").value;
         const password=document.getElementById("pwd").value;
+        const signupEmail=localStorage.getItem("signupEmail");
+        const signupPassword=localstorage.getItem("signupPassword");
         attempts++;
-        const signupemail=localStorage.getItem("email");
-        const signuppsword=locatstorage.getItem("password");
-        if ((email ==username && password==password) 
+        if ((email ===username && password===SPassword) 
         ||
-      (email==signupemail&& password==signuppsword))
+      (email===signupemail&& password==signupPassword))
       {
         alert("Login Sucessful");
         const name = signupEmail === email ? localStorage.getItem("signupName") : "Default User";
