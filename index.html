@@ -88,6 +88,7 @@
         const name = signupEmail === email ? localStorage.getItem("signupName") : "Default User";
                 localStorage.setItem("currentUserName", name);
                 localStorage.setItem("currentUserEmail", email);
+        attempts = 0;
         window.location.href="product.html";
       }else
       {
