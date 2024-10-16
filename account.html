@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="account.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        
+        <title>GLOSSGURL</title>
+    </head>
+    <body>
+        <header>
+            <h2><i>GLOSSGURL</i></h2>
+        </header>
+        <nav class="nav-bar">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="product.html">Home</a>
+                <a href="aboutus.html">About</a>
+        </nav>
+        <div class="account-info">
+            <h3>Your Account Details</h3>
+            <p id="accountName">Name: </p>
+            <p id="accountEmail">Email: </p>
+        </div>
+    
+        <script>
+            
+            const name = localStorage.getItem("currentUserName");
+            const email = localStorage.getItem("currentUserEmail");
+    
+            document.getElementById("accountName").textContent = `Name: ${name}`;
+            document.getElementById("accountEmail").textContent = `Email: ${email}`;
+        </script>
+
+    </body>
+    </html>

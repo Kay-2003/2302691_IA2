@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <title>GLOSSGURL</title>
+</head>
+<body>
+  <h2><i>GLOSSGURL</i></h2>
+  <div class="form-container"></div>
+  <form>
+   <fieldset>
+    <center><legend>Sign In</legend></center><br>
+    <label for="name">Name</label>
+    <br>
+    <input type="text" id="name" name="name"
+    placeholder="Kimone Barnett" required><br>
+    <br><br>
+
+    <label for="email">Email Address</label>
+    <br>
+    <input type="email" id="email" name="email" 
+    placeholder="kimonebarnett@gmail.com" required><br>
+    <br><br>
+
+    <label for="pwd">Password</label>
+    <br>
+    <input type=password id="pwd" name="pwd" pattern="[A-Za-z]{8}" placeholder="HOGWARTS" required>
+    <br><br>
+    
+    <input type="submit" value="Login">
+   </fieldset>
+  </form>
+  
+    <form id= "createacc" class="create-account">
+      <center><legend>Sign Up</legend></center>
+      <label for="name">Name</label>
+    <br>
+    <input type="text" id="Name" name="Name" placeholder="Kimone Barnett" required><br>
+    <br><br>
+
+    <label for="email">Email Address</label>
+    <br>
+    <input type="email" id="Email" name="Email" placeholder="kimonebarnett@gmail.com" required><br>
+    <br><br>
+
+    <label for="pword">Password</label>
+    <br>
+    <input type=password id="pword" name="pword" pattern="[A-Za-z]{8}" placeholder="HOGWARTS" required>
+    <br><br>
+    
+    <input type="submit" value="Sign In">
+    </form>
+  
+    <script>
+      const username= "kimonebarett@gmail.com";
+      const SPassword="HOGWARTS123"; 
+
+      function signupForm(){
+        const name= document.getElementById("Name").value;
+        const email= document.getElementById("Email").value;
+        const password= document.getElementById("pword").value;
+        localStorage.setItem("Name", name);
+        localStorage.setItem("email", email).value;
+        localStorage.setItem("password", password);
+      }
+
+      
+      let attempts=0;
+
+      function loginForm()
+      {
+        const email=document.getElementById("email").value;
+        const password=document.getElementById("pwd").value;
+        attempts++;
+        const signupemail=localStorage.getItem("email");
+        const signuppsword=locatstorage.getItem("password");
+        if ((email ==username && password==password) 
+        ||
+      (email==signupemail&& password==signuppsword))
+      {
+        alert("Login Sucessful");
+        const name = signupEmail === email ? localStorage.getItem("signupName") : "Default User";
+                localStorage.setItem("currentUserName", name);
+                localStorage.setItem("currentUserEmail", email);
+        window.location.href="product.html";
+      }else
+      {
+        if (attempts>=3){
+        alert("Invalid Login");
+        window.location.href="errorpage.html";
+        }
+      }
+      }
+    </script>
+</div>
+</body> 
+</html>
